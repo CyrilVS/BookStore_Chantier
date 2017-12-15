@@ -9,7 +9,6 @@
       <th>Titre</th>
       <th>Auteur</th>
       <th>Prix</th>
-      <th>Note</th>
       <th></th>
     </tr>
   </thead>
@@ -20,7 +19,7 @@
       <td>{{book.author | uppercase}}</td>
       <td>{{book.price | currency:'EUR'}}</td>
       <td>
-        <input type="button"/>
+          <app-buy-button [book]="book"></app-buy-button>
       </td>
     </tr>
   </tbody>

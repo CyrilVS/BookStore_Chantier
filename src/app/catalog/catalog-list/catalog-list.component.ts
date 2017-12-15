@@ -13,7 +13,9 @@ export class CatalogListComponent implements OnInit {
 
   books$: Observable<Book[]>;
 
-  constructor(private catalog: CatalogService) { }
+  constructor(
+    private catalog: CatalogService
+  ) { }
 
   ngOnInit() {
     this.books$ = this.catalog.getList();
