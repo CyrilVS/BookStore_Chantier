@@ -1,3 +1,27 @@
-<p>
-  catalog-list works!
-</p>
+<ng-template #loading>
+  <p>Chargement en cours ...</p>
+</ng-template>
+
+<table *ngIf="books$ | async as books , else loading">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Titre</th>
+      <th>Auteur</th>
+      <th>Prix</th>
+      <th>Note</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td><a><img [src]="book.image"></a></td>
+      <td>{{book.title | uppercase}}</td>
+      <td>{{book.author | uppercase}}</td>
+      <td>{{book.price | currency:'EUR'}}</td>
+      <td>
+        <input type="button"/>
+      </td>
+    </tr>
+  </tbody>
+</table>
